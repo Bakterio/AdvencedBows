@@ -12,6 +12,7 @@ public class ItemsManager {
         items.add(new TeleportBow());
         items.add(new GlowBow());
         items.add(new InstantKillBow());
+        items.add(new KalashnikovBow());
     }
 
     public static void manage() {

@@ -44,6 +44,6 @@ public class InstantKillBow extends CustomItem {
 
     @Override
     public String getDescription() {
-        return "Instantly kill hitted entity.";
+        return "Instantly kill hitted entity. !!!NO DROP!!!";
     }
 }
