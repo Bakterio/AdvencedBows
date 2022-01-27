@@ -1,6 +1,7 @@
 package cz.bakterio.spigot.advencedbows.items;
 
 import org.bukkit.Bukkit;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 
@@ -19,5 +20,12 @@ public class ItemsManager {
         for (CustomItem item : items) {
             Bukkit.addRecipe(item.getRecipe());
         }
+    }
+
+    public static CustomItem findCustomItem(ItemStack item) {
+        for (CustomItem i : items) {
+            if (i.getItem().equals(item)) return i;
+        }
+        return null;
     }
 }

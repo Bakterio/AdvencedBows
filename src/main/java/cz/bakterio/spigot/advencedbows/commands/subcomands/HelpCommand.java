@@ -1,5 +1,6 @@
 package cz.bakterio.spigot.advencedbows.commands.subcomands;
 
+import cz.bakterio.spigot.advencedbows.GUIs.BowListMenu;
 import cz.bakterio.spigot.advencedbows.commands.CommandsManager;
 import cz.bakterio.spigot.advencedbows.commands.SubCommand;
 import org.bukkit.ChatColor;
@@ -49,5 +50,7 @@ public class HelpCommand extends SubCommand {
                     ChatColor.YELLOW + "\n  Usage: " + ChatColor.RESET + command.getSyntax() + "\n");
         }
         p.sendMessage(message.toString());
+
+        p.openInventory(BowListMenu.getInv(p));
     }
 }
