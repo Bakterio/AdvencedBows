@@ -1,6 +1,8 @@
 package cz.bakterio.spigot.advencedbows.commands.subcomands;
 
 import cz.bakterio.spigot.advencedbows.commands.SubCommand;
+import cz.bakterio.spigot.advencedbows.items.CustomItem;
+import cz.bakterio.spigot.advencedbows.items.ItemsManager;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -41,6 +43,7 @@ public class GiveCommand extends SubCommand {
         List<String> out = new ArrayList<>();
         out.add("bow");
         out.add("crossbow");
+        out.add("teleport-bow");
         return out;
     }
 
@@ -62,6 +65,10 @@ public class GiveCommand extends SubCommand {
 
             p.getInventory().addItem(crossbow);
             p.sendMessage(meta.getDisplayName() + " has been added to your inventory.");
+        } else {
+            for (CustomItem item : ItemsManager.items) {
+                if (item.getName().equalsIgnoreCase(args[1])) p.getInventory().addItem(item.getItem());
+            }
         }
     }
 }

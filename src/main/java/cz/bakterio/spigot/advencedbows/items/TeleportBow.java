@@ -1,6 +1,8 @@
 package cz.bakterio.spigot.advencedbows.items;
 
+import cz.bakterio.spigot.advencedbows.AdvencedBows;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
@@ -9,21 +11,24 @@ public class TeleportBow extends CustomItem {
 
     @Override
     public String getName() {
-        return "Teleport Bow";
+        return "teleport-bow";
     }
 
     @Override
     public ItemStack getItem() {
         ItemStack bow = new ItemStack(Material.BOW);
         setDisplayName(bow, "Teleport bow");
-        bow.addEnchantment(Enchantment.LUCK, 1);
+        bow.addEnchantment(Enchantment.ARROW_INFINITE, 1);
         return bow;
     }
 
     @Override
     public ShapedRecipe getRecipe() {
-        ShapedRecipe recipe = new ShapedRecipe();
-        recipe.setIngredient();
-        return null;
+        NamespacedKey key = new NamespacedKey(AdvencedBows.getPlugin(), "teleport-bow");
+        ShapedRecipe recipe = new ShapedRecipe(key, getItem());
+        recipe.shape(" P ", "PBP", " P ");
+        recipe.setIngredient('P', Material.ENDER_PEARL);
+        recipe.setIngredient('B', Material.BOW);
+        return recipe;
     }
 }
