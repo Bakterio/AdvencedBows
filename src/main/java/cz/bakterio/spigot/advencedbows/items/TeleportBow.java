@@ -31,4 +31,13 @@ public class TeleportBow extends CustomItem {
         recipe.setIngredient('B', Material.BOW);
         return recipe;
     }
+
+    @Override
+    public Material[][] getCraftingItems() {
+        return new Material[][] {
+                {null, Material.ENDER_PEARL, null},
+                {Material.ENDER_PEARL, Material.BOW, Material.ENDER_PEARL},
+                {null, Material.ENDER_PEARL, null}
+        };
+    }
 }

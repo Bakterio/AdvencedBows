@@ -32,4 +32,13 @@ public class GlowBow extends CustomItem {
         recipe.setIngredient('D', Material.GLOWSTONE_DUST);
         return recipe;
     }
+
+    @Override
+    public Material[][] getCraftingItems() {
+        return new Material[][] {
+                {Material.GLOWSTONE, Material.GLOWSTONE, Material.GLOWSTONE},
+                {Material.GLOWSTONE_DUST, Material.BOW, Material.GLOWSTONE_DUST},
+                {Material.GLOWSTONE, Material.EMERALD_BLOCK, Material.GLOWSTONE}
+        };
+    }
 }

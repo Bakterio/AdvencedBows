@@ -26,10 +26,19 @@ public class InstantKillBow extends CustomItem {
         NamespacedKey key = new NamespacedKey(AdvencedBows.getPlugin(), "KillBow");
         ShapedRecipe recipe = new ShapedRecipe(key, getItem());
 
-        recipe.shape("DDD", "DBD", "BDB");
+        recipe.shape("DDD", "DBD", "bDb");
         recipe.setIngredient('D', Material.DIAMOND_BLOCK);
         recipe.setIngredient('B', Material.BOW);
-        recipe.setIngredient('B', Material.DEAD_BUSH);
+        recipe.setIngredient('b', Material.DEAD_BUSH);
         return recipe;
+    }
+
+    @Override
+    public Material[][] getCraftingItems() {
+        return new Material[][] {
+                {Material.DIAMOND, Material.DIAMOND, Material.DIAMOND},
+                {Material.DIAMOND, Material.BOW, Material.DIAMOND},
+                {Material.DEAD_BUSH, Material.DIAMOND, Material.DEAD_BUSH}
+        };
     }
 }
