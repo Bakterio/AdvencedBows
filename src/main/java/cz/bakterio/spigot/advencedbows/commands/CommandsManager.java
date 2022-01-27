@@ -1,8 +1,7 @@
 package cz.bakterio.spigot.advencedbows.commands;
 
 import cz.bakterio.spigot.advencedbows.AdvencedBows;
-import cz.bakterio.spigot.advencedbows.commands.subcomands.GiveCommand;
-import cz.bakterio.spigot.advencedbows.commands.subcomands.HelpCommand;
+import cz.bakterio.spigot.advencedbows.commands.subcomands.*;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 

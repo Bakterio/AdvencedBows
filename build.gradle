@@ -6,10 +6,19 @@ group = 'cz.bakterio.spigot'
 version = '1.0-SNAPSHOT'
 
 repositories {
+    mavenCentral()
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
 }
 
 dependencies {
-    compileOnly files('libs/spigot-api-1.18.1-R0.1-20220125.223726-52.jar')
+    compileOnly 'org.spigotmc:spigot-api:1.18.1-R0.1-SNAPSHOT'
 }
 
 def targetJavaVersion = 17
