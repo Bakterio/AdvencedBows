@@ -14,7 +14,7 @@ public class TeleportBowListener implements Listener {
         if (p.getInventory().getItemInMainHand().equals(new TeleportBow().getItem())) {
             Location loc = e.getHitBlock().getLocation();
             p.teleport(new Location(p.getWorld(), loc.getX(), loc.getY() + 1, loc.getZ()));
-            p.sendMessage("woosh");
+            p.sendMessage("woosh"); // TODO invent better message
         }
     }
 }

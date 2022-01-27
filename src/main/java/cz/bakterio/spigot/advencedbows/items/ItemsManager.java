@@ -9,6 +9,8 @@ public class ItemsManager {
 
     private static void addItems() {
         items.add(new TeleportBow());
+        items.add(new GlowBow());
+        items.add(new InstantKillBow());
     }
 
     public static void manage() {

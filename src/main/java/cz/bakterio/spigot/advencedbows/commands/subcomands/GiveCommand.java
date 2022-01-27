@@ -43,7 +43,9 @@ public class GiveCommand extends SubCommand {
         List<String> out = new ArrayList<>();
         out.add("bow");
         out.add("crossbow");
-        out.add("teleport-bow");
+        for (CustomItem item : ItemsManager.items) {
+            out.add(item.getName());
+        }
         return out;
     }
 
@@ -65,7 +67,7 @@ public class GiveCommand extends SubCommand {
 
             p.getInventory().addItem(crossbow);
             p.sendMessage(meta.getDisplayName() + " has been added to your inventory.");
-        } else {
+        } else if (getTabCompletion().contains(args[1])) {
             for (CustomItem item : ItemsManager.items) {
                 if (item.getName().equalsIgnoreCase(args[1])) p.getInventory().addItem(item.getItem());
             }

@@ -7,28 +7,29 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 
-public class TeleportBow extends CustomItem {
-
+public class GlowBow extends CustomItem {
     @Override
     public String getName() {
-        return "Teleport-bow";
+        return "GlowBow";
     }
 
     @Override
     public ItemStack getItem() {
         ItemStack bow = new ItemStack(Material.BOW);
-        setDisplayName(bow, "Teleport bow");
+        setDisplayName(bow, "GlowBow");
         bow.addEnchantment(Enchantment.ARROW_INFINITE, 1);
         return bow;
     }
 
     @Override
     public ShapedRecipe getRecipe() {
-        NamespacedKey key = new NamespacedKey(AdvencedBows.getPlugin(), "teleport-bow");
+        NamespacedKey key = new NamespacedKey(AdvencedBows.getPlugin(), "GlowBow");
         ShapedRecipe recipe = new ShapedRecipe(key, getItem());
-        recipe.shape(" P ", "PBP", " P ");
-        recipe.setIngredient('P', Material.ENDER_PEARL);
+        recipe.shape("GGG", "DBD", "DED");
         recipe.setIngredient('B', Material.BOW);
+        recipe.setIngredient('E', Material.EMERALD_BLOCK);
+        recipe.setIngredient('G', Material.GLOWSTONE);
+        recipe.setIngredient('D', Material.GLOWSTONE_DUST);
         return recipe;
     }
 }

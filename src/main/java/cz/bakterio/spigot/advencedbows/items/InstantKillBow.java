@@ -7,28 +7,29 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 
-public class TeleportBow extends CustomItem {
-
+public class InstantKillBow extends CustomItem {
     @Override
     public String getName() {
-        return "Teleport-bow";
+        return "InstantKill-bow";
     }
 
     @Override
     public ItemStack getItem() {
         ItemStack bow = new ItemStack(Material.BOW);
-        setDisplayName(bow, "Teleport bow");
-        bow.addEnchantment(Enchantment.ARROW_INFINITE, 1);
+        setDisplayName(bow, "Instant-kill bow");
+        bow.addEnchantment(Enchantment.ARROW_KNOCKBACK, 1);
         return bow;
     }
 
     @Override
     public ShapedRecipe getRecipe() {
-        NamespacedKey key = new NamespacedKey(AdvencedBows.getPlugin(), "teleport-bow");
+        NamespacedKey key = new NamespacedKey(AdvencedBows.getPlugin(), "KillBow");
         ShapedRecipe recipe = new ShapedRecipe(key, getItem());
-        recipe.shape(" P ", "PBP", " P ");
-        recipe.setIngredient('P', Material.ENDER_PEARL);
+
+        recipe.shape("DDD", "DBD", "BDB");
+        recipe.setIngredient('D', Material.DIAMOND_BLOCK);
         recipe.setIngredient('B', Material.BOW);
+        recipe.setIngredient('B', Material.DEAD_BUSH);
         return recipe;
     }
 }
