@@ -41,4 +41,9 @@ public class InstantKillBow extends CustomItem {
                 {Material.DEAD_BUSH, Material.DIAMOND, Material.DEAD_BUSH}
         };
     }
+
+    @Override
+    public String getDescription() {
+        return "Instantly kill hitted entity.";
+    }
 }

@@ -14,6 +14,8 @@ public abstract class CustomItem {
 
     public abstract Material[][] getCraftingItems();
 
+    public abstract String getDescription();
+
     protected void setDisplayName(ItemStack item, String name) {
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName(name);

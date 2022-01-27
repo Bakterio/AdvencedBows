@@ -41,4 +41,9 @@ public class GlowBow extends CustomItem {
                 {Material.GLOWSTONE, Material.EMERALD_BLOCK, Material.GLOWSTONE}
         };
     }
+
+    @Override
+    public String getDescription() {
+        return "Hitted entity will glow.";
+    }
 }

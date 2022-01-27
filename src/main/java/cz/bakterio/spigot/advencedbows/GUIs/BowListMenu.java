@@ -4,9 +4,13 @@ import cz.bakterio.spigot.advencedbows.items.CustomItem;
 import cz.bakterio.spigot.advencedbows.items.ItemsManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.ArrayList;
 
 public class BowListMenu {
     public static Inventory getInv(Player p) {
@@ -25,6 +29,13 @@ public class BowListMenu {
                 menu.setItem(i + j*9, makeItem(item.getCraftingItems()[j][i]));
             }
         }
+
+        ItemStack book = new ItemStack(Material.ENCHANTED_BOOK);
+        ItemMeta meta = book.getItemMeta();
+        meta.setDisplayName(item.getDescription());
+        meta.setLore(new ArrayList<String>());
+        book.setItemMeta(meta);
+        menu.setItem(15, book);
 
         return menu;
     }

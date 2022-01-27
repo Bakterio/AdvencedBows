@@ -40,4 +40,9 @@ public class TeleportBow extends CustomItem {
                 {null, Material.ENDER_PEARL, null}
         };
     }
+
+    @Override
+    public String getDescription() {
+        return "Teleports you...";
+    }
 }
