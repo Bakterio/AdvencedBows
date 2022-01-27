@@ -1,0 +1,10 @@
+name: AdvencedBows
+version: '${version}'
+main: cz.bakterio.spigot.advencedbows.AdvencedBows
+api-version: 1.18
+authors: [ Bakterio ]
+description: des
+commands:
+  bows:
+    description: Super bows
+    usage: /<command>
