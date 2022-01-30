@@ -69,7 +69,15 @@ public class GiveCommand extends SubCommand {
             p.sendMessage(meta.getDisplayName() + " has been added to your inventory.");
         } else if (getTabCompletion().contains(args[1])) {
             for (CustomItem item : ItemsManager.items) {
-                if (item.getName().equalsIgnoreCase(args[1])) p.getInventory().addItem(item.getItem());
+                if (item.getName().equalsIgnoreCase(args[1])) {
+                    if (args.length == 3) {
+                        ItemStack bow = item.getItem();
+                        bow.setAmount(Integer.parseInt(args[2]));
+                        p.getInventory().addItem(bow);
+                    } else {
+                        p.getInventory().addItem(item.getItem());
+                    }
+                }
             }
         }
     }
