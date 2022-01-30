@@ -1,19 +1,19 @@
-#AdvencedBows
+# AdvencedBows
 Take bows to serious level!!!
 
-##Teleport-bow
+## Teleport-bow
 Teleports you...
-##GlowBow
+## GlowBow
 Hitted entity will glow.
-##InstantKill-bow
+## InstantKill-bow
 Instantly kill hitted entity. !!!NO DROP!!!
-##Kalashnikov-bow
+## Kalashnikov-bow
 The best gun mankind have ever made.
-##BulletForBow
+## BulletForBow
 Can hit you, such a pain.
-##grande
+## grande
 Basically grenade.
-##RPG
+## RPG
 Shoots grenades.
-##canon
+## canon
 Big boom boom.
