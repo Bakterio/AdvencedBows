@@ -1,0 +1,9 @@
+plugins {
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+mainClassName = 'cz.bakterio.spigot.advencedbows.readmeGenerator.Generator';
+dependencies {
+    implementation project(":")  // root projects
+    implementation 'org.spigotmc:spigot-api:1.18.1-R0.1-SNAPSHOT'
+}

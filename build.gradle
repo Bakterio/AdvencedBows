@@ -4,25 +4,35 @@ plugins {
 
 group = 'cz.bakterio.spigot'
 version = '1.0-SNAPSHOT'
+jar.enabled(true) // this project is now "open" to others
 
-repositories {
-    mavenCentral()
-    maven {
-        name = 'spigotmc-repo'
-        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+allprojects {  // project ("ReadmeGenerator"), subprojects
+    apply plugin: 'java'
+
+    version = '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        maven {
+            name = 'spigotmc-repo'
+            url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        }
+        maven {
+            name = 'sonatype'
+            url = 'https://oss.sonatype.org/content/groups/public/'
+        }
     }
-    maven {
-        name = 'sonatype'
-        url = 'https://oss.sonatype.org/content/groups/public/'
+
+    dependencies {
+        implementation 'com.google.code.gson:gson:2.8.9'
     }
 }
-
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.18.1-R0.1-SNAPSHOT'
-    implementation 'com.google.code.gson:gson:2.8.9'
 }
 
-def targetJavaVersion = 17
+    def targetJavaVersion = 17
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion

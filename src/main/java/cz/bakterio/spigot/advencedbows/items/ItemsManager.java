@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class ItemsManager {
     public static final ArrayList<CustomItem> items = new ArrayList<>();
 
-    private static void addItems() {
+    public static void addItems() {
         items.add(new TeleportBow());
         items.add(new GlowBow());
         items.add(new InstantKillBow());
